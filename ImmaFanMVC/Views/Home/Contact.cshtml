@@ -1,17 +1,53 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact Me";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>@ViewBag.Title</h2>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@*Contact Form and Info Cards derived from https://artofwhere.com/contact-us*@
+<div class="row">
+    <div class="col m12 l6">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-title"><h4>@ViewBag.Message</h4></div>
+                <form id="contact-us-form" @*method="post" action="contact-us/send"*@>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="contact_name" name="contact_name" type="text" class="validate" value="">
+                            <label for="contact_name">Your name</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="contact_email" name="contact_email" type="email" class="validate" value="">
+                            <label for="contact_email">Your email address</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <textarea id="contact_message" name="contact_message" class="materialize-textarea"></textarea>
+                            <label for="contact_message">Your message</label>
+                        </div>
+                    </div>
+                    <div class="row no-margin">
+                        <div class="col s12">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">
+                                Send
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m12 l6">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-title"><h4>Info</h4></div>
+                101 North Main St.<br />
+                Studio #400<br />
+                Greenville, SC, USA<br />
+                <br /><br />
+                555-555-5555<br />
+                <strong>Hours</strong><br />
+                9am - 5pm EST Monday-Friday<br /><br />
+            </div>
+        </div>
+    </div>
+</div>

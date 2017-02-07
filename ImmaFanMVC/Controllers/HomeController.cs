@@ -15,14 +15,22 @@ namespace ImmaFanMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "of tiny carvings.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Send a message!";
+
+            return View();
+        }
+
+        public ActionResult Resources()
+        {
+            ViewBag.Message = "Here are some cool resources if you" + 
+                " want to get into tiny carvings too!";
 
             return View();
         }
